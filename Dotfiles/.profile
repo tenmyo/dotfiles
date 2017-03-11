@@ -1,5 +1,3 @@
-echo .profile
-
 export PAGER=less
 export LESS='-i -M -R -S -W -z-4'
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
