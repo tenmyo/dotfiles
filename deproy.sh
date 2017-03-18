@@ -6,6 +6,7 @@ for f in $(dirname $(realpath $0))/config/* ; do
 done
 
 for f in $(dirname $(realpath $0))/Dotfiles/.??* ; do
+  [ -n "${MSYS}" ] && [ $(basename $f) = .gitconfig ] && continue
   ln -sf $f ~/$(basename $f)
 done
 echo $(tput setaf 2)Deploy dotfiles complete!.$(tput sgr0)
