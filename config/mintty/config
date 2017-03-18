@@ -16,5 +16,23 @@ Rows=50
 
 IMECursorColor=255,0,0
 
+CursorColour=221,221,221
 ForegroundColour=221,221,221
 BackgroundColour=0,0,0
+
+Black=0,0,0
+Red=221,0,0
+Green=0,221,0
+Yellow=221,221,0
+Blue=0,0,221
+Magenta=221,0,221
+Cyan=0,221,221
+White=221,221,221
+BoldBlack=64,64,64
+BoldRed=255,64,64
+BoldGreen=64,255,64
+BoldYellow=255,255,64
+BoldBlue=96,96,255
+BoldMagenta=255,96,255
+BoldCyan=64,255,255
+BoldWhite=255,255,255
