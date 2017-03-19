@@ -25,3 +25,6 @@ function open {
 alias down='curl -LO'
 alias plist='pacman -Ss'
 alias pinst='pacman -S'
+alias tolower='tr "[A-Z]" "[a-z]"'
+alias toupper='tr "[a-z]" "[A-Z]"'
+alias reload='exec $SHELL'
