@@ -1,23 +1,34 @@
+" global settings
 set nocompatible
 syntax enable
 filetype plugin indent on
 
+
+" file editing
+set modeline
+set noswapfile
+
+
+" rulers
+set cursorcolumn
+set cursorline
 set number
 set numberwidth=6
-set ruler
 
+" invisible chars
 set list
 "set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 set listchars=tab:>-,trail:-,eol:$
 
-set showcmd
 
+" search
 set hlsearch
 set incsearch
 set smartcase
 set showmatch
 set wrapscan
 
+" fyletimes
 set encoding=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,cp932,sjis,euc-jp
@@ -25,7 +36,15 @@ set fileformats=unix,dos,mac
 
 set ambiwidth=double
 
-set modeline
+" status
+set laststatus=2 " 0: never, 1: when multi window, 2: always
+set statusline=%F%h%w%m%r
+set statusline+=\ [%Y/%{&fenc!=''?&fenc:&enc}/%{&ff}]
+set statusline+=\ (%{strftime(\"%FT%R%z\",getftime(expand(\"%:p\")))})
+set statusline+=%=
+set statusline+=[HEX=0x\%02.2B]
+set statusline+=\ [POS=%l,%v]\ [LEN=%L]
+set showcmd
 
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
