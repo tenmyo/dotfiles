@@ -18,14 +18,11 @@ verbose on
 vbell on
 
 
-# the $TERM variable set to `xterm' for various environment.
-term xterm
-
 # enable 256 color
-termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+term screen-256color
 
 # don't resize terminal width when re-attached.
-termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+termcapinfo xterm* 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
 
 caption always "%-w%10L>%{=b bw}%n %t%{-}%+w%-0="
 hardstatus alwayslastline "%H%=%Y/%m/%d %02c"
