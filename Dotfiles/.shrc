@@ -1,0 +1,17 @@
+# ~/.shrc: exec on interactive(generic)
+# shell options, aliases, functions, completions
+
+# If not running interactivery, don't do anything
+[ "$-" != "*i*" ] && return
+
+echo .shrc
+
+# ===============================$
+# Shell Options$
+# ===============================$
+# Can't overwrite by redirect$
+# If you want to force overwrite, use >| instead >$
+set -o noclobber$
+
+# vi: et sw=2 sts=2 syntax=sh
+
