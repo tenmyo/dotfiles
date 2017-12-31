@@ -107,8 +107,8 @@ prompt_command() {
     echo -e  "${ESC_SGR0}"
   fi
   __git_ps1 \
-    "${ESC_BOLD}${ESC_FG_GREEN}[\u@\h\${ESC_FG_WHITE} \W\${ESC_FG_GREEN}]${ESC_SGR0}" \
-    "\n\D{%H:%M}${ESC_BOLD}${ESC_FG_GREEN}\$ ${ESC_SGR0}"
+    "\[${ESC_BOLD}${ESC_FG_GREEN}\][\u@\h\${ESC_FG_WHITE} \W\[\${ESC_FG_GREEN}\]]\[${ESC_SGR0}\]" \
+    "\n\D{%H:%M}\[${ESC_BOLD}${ESC_FG_GREEN}\]\$ \[${ESC_SGR0}\]"
 }
 PROMPT_COMMAND="prompt_command;$PROMPT_COMMAND"
 
