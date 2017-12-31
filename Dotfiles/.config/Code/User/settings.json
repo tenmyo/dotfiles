@@ -1,0 +1,9 @@
+{
+    "editor.minimap.renderCharacters": false,
+    "editor.mouseWheelZoom": true,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
+    "editor.renderIndentGuides": true,
+    "editor.scrollBeyondLastLine": false,
+    "files.insertFinalNewline": true
+}
