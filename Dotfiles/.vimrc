@@ -1,25 +1,34 @@
-" global settings
-set nocompatible
-syntax enable
-filetype plugin indent on
+" ~/.vimrc
+source ~/.exrc
 
-" file editing
-set modeline
-set noswapfile
+if has('multi_byte')
+  set encoding=utf-8
+  scriptencoding utf-8
+endif
+
+if has('syntax')
+  syntax enable
+  filetype plugin indent on
+endif
+
+if has('smartindent')
+  set smartindent
+endif
+set smarttab
 
 " cursors
 set cursorcolumn
 highlight CursorColumn ctermbg=DarkGray guibg=Gray20
-autocmd InsertEnter * highlight CursorColumn ctermbg=DarkBlue guibg=DarkBlue
-autocmd InsertLeave * highlight CursorColumn ctermbg=DarkGray guibg=Gray20
+if has('autocmd')
+  augroup ChangeCursorColumnColor
+    autocmd!
+    autocmd InsertEnter * highlight CursorColumn ctermbg=DarkBlue guibg=DarkBlue
+    autocmd InsertLeave * highlight CursorColumn ctermbg=DarkGray guibg=Gray20
+  augroup END
+endif
 set cursorline
 highlight CursorLine ctermbg=None guibg=Gray20
 highlight CursorLineNr cterm=underline ctermbg=None guibg=Gray20
-
-
-" rulers
-set number
-set numberwidth=6
 
 " invisible chars
 set list
@@ -27,28 +36,38 @@ set list
 set listchars=tab:>-,trail:-,eol:$
 
 " search
-set hlsearch
-set incsearch
+if has('extra_search')
+  set hlsearch
+  set incsearch
+endif
 set smartcase
-set showmatch
-set wrapscan
+source $VIMRUNTIME/macros/matchit.vim
 
 " filetypes
-set encoding=utf-8
-set termencoding=utf-8
-set fileencodings=utf-8,iso-2022-jp,cp932,sjis,euc-jp
 set fileformats=unix,dos,mac
-set ambiwidth=double
+if has('multi_byte')
+  set ambiwidth=double
+  set encoding=utf-8
+  set fileencodings=utf-8,iso-2022-jp,cp932,sjis,euc-jp
+  set termencoding=utf-8
+endif
 
 " status
 set laststatus=2 " 0: never, 1: when multi window, 2: always
-set statusline=%n:\ %F%h%w%m%r
-set statusline+=\ [%Y/%{&fenc!=''?&fenc:&enc}/%{&ff}]
-set statusline+=\ (%{strftime(\"%F\ %R\",getftime(expand(\"%:p\")))})
-set statusline+=%=
-set statusline+=[HEX=0x\%02.2B]
-set statusline+=\ [POS=%l,%c]\ [LEN=%L]
-set showcmd
+if has('statusline')
+  set statusline=%n:\ %F%h%w%m%r
+  set statusline+=\ [%Y/%{&fenc!=''?&fenc:&enc}/%{&ff}]
+  set statusline+=\ (%{strftime(\"%F\ %R\",getftime(expand(\"%:p\")))})
+  set statusline+=%=
+  set statusline+=[HEX=0x\%02.2B]
+  set statusline+=\ [POS=%l,%c]\ [LEN=%L]
+endif
+if has('cmdline_info')
+  set showcmd
+endif
+if has('wildmenu')
+  set wildmenu
+endif
 
 " set cursortype by mode for mintty
 " ESC [n SP q
@@ -65,7 +84,50 @@ let &t_SR.="\e[3 q"   " Enter Replace Mode
 let &t_EI.="\e[1 q"   " Leave Edit Mode
 let &t_te.="\e[0 q"   " Exit VIM
 
-set termguicolors
+if has('termguicolors')
+  set termguicolors
+endif
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+set background=dark
+
+" ===============================
+" keymap
+" ===============================
+nnoremap <silent><ESC><ESC> :nohlsearch<CR><ESC>
+set pastetoggle=<F9>
+nnoremap <silent><F9> :set paste!<CR>:set paste?<CR>
+
+" http://inari.hatenablog.com/entry/2014/05/05/231307
+""""""""""""""""""""""""""""""
+" 全角スペースの表示
+""""""""""""""""""""""""""""""
+function! ZenkakuSpace()
+  highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+endfunction
+
+if has('autocmd')
+  augroup ZenkakuSpace
+    autocmd!
+    autocmd ColorScheme * call ZenkakuSpace()
+    autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
+  augroup END
+  call ZenkakuSpace()
+endif
+""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" 最後のカーソル位置を復元する
+""""""""""""""""""""""""""""""
+if has('autocmd')
+  augroup RestoreCursor
+    autocmd!
+    autocmd BufReadPost *
+          \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+          \   exe "normal! g'\"" |
+          \ endif
+  augroup END
+endif
+""""""""""""""""""""""""""""""
 
