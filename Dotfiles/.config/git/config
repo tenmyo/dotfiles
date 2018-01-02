@@ -1,10 +1,11 @@
 [user]
 	name = TENMYO Masakazu
 	email = tenmyo@gmail.com
+[credential]
+	helper = gnome-keyring
 [push]
 	default = matching
 [core]
-	excludesfile = C:\\Work\\gitignore_global.txt
 	autoCRLF = false
 [gui]
 	fontui = -family \"Myrica M\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0
@@ -16,12 +17,12 @@
 	cmd = 'C:/Program Files/WinMerge/WinMergeU.exe' -e -r -u -x -wl -dl \"$LOCAL\" -dr \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
 [difftool "sourcetree"]
 	cmd = 'C:/Program Files/WinMerge/WinMergeU.exe' -e -r -u -x -wl -dl \"$LOCAL\" -dr \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
-[pager]
-	log = diff-highlight | less
-	diff = diff-highlight | less
-	show = diff-highlight | less
-[interactive]
-	diffFilter = diff-highlight
+# [pager]
+# 	log = diff-highlight | less
+# 	diff = diff-highlight | less
+# 	show = diff-highlight | less
+# [interactive]
+# 	diffFilter = diff-highlight
 [diff]
 	compactionHeuristic = true
 [color "diff"]
@@ -32,3 +33,8 @@
 	new = cyan
 	commit = normal 026
 	whitespace = normal 240
+[ghq]
+	root = ~/git
+	root = ~/go/src
+[url "git@github.com:"]
+	pushinsteadof = https://github.com/
