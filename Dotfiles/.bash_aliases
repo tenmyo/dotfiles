@@ -20,7 +20,7 @@ alias -- -='cd -'
 
 alias l='ls -F'
 alias la='ls -A'
-alias ll='ls -A --full-time'
+alias ll='ls -A -l --time-style="+%F %T"'
 
 alias whence='type -a'
 alias relogin='exec $SHELL -l'
