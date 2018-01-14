@@ -2,7 +2,7 @@
 # shell options, aliases, functions, completions
 
 # If not running interactivery, don't do anything
-[ "$-" != "*i*" ] && return
+expr "$-" : '^.*i' >/dev/null || return
 
 echo .shrc
 
@@ -11,7 +11,7 @@ echo .shrc
 # ===============================$
 # Can't overwrite by redirect$
 # If you want to force overwrite, use >| instead >$
-set -o noclobber$
+set -o noclobber
 
 # vi: et sw=2 sts=2 syntax=sh
 
