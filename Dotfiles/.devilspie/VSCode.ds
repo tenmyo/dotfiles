@@ -1,0 +1,11 @@
+; generated_rule VSCode
+( if 
+( begin 
+( contains ( application_name ) "Visual Studio Code" )
+) 
+( begin 
+( maximize )
+( opacity 85 )
+( println "match" )
+)
+)
