@@ -50,5 +50,5 @@ export PATH="$GOBIN:$PATH"
 # ccache
 type ccache >/dev/null 2>&1             &&
   export USE_CCACHE=1                   &&
-  export CCACHE_DIR="$HOME/tmp/ccache"
+  export CCACHE_DIR="$HOME/.cache/ccache"
 
