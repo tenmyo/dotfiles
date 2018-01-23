@@ -47,3 +47,10 @@ alias pinst='pacman -S'
 alias tolower='tr "[A-Z]" "[a-z]"'
 alias toupper='tr "[a-z]" "[A-Z]"'
 
+# git
+alias gd='git diff'
+alias gdw='git diff --color-words'
+alias gdc='git diff --cached'
+alias sts='git status --short --branch'
+alias gt='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
+alias glogps='git log -p --stat'

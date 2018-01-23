@@ -1,40 +1,57 @@
+# vim: noet
+# User
 [user]
-	name = TENMYO Masakazu
 	email = tenmyo@gmail.com
-[credential]
-	helper = gnome-keyring
-[push]
-	default = matching
+	name = TENMYO Masakazu
+
+# Alias
+[alias]
+
+# General
+[color]
+	ui = auto
 [core]
 	autoCRLF = false
-[gui]
-	fontui = -family \"Myrica M\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0
+[credential]
+	helper = gnome-keyring
 [diff]
 	tool = WinMerge
+[url "git@github.com:"]
+	pushinsteadof = https://github.com/
+
+# Tools
+[color "diff"]
+	# for dark terminal theme
+	# fg [bg] [attr]
+	# system: 0-15
+	# gray(24colors): 232-255
+	# rgb(6*6*6): 16-231
+	meta = normal 242 bold # gray:10
+	frag = normal 240 # gray:8
+	old = 203 normal # rgb: 501
+	new = 063 normal # rgb: 115
+	commit = normal 024 # rgb: 012
+	context = normal normal dim
+	whitespace = normal 242
+[color "status"]
+	added = bold cyan
+	changed = bold yellow
+	untracked = bold magenta
+[gui]
+	fontui = -family \"Myrica M\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0
 [difftool]
 	prompt = false
 [difftool "WinMerge"]
 	cmd = 'C:/Program Files/WinMerge/WinMergeU.exe' -e -r -u -x -wl -dl \"$LOCAL\" -dr \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
 [difftool "sourcetree"]
 	cmd = 'C:/Program Files/WinMerge/WinMergeU.exe' -e -r -u -x -wl -dl \"$LOCAL\" -dr \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
-# [pager]
-# 	log = diff-highlight | less
-# 	diff = diff-highlight | less
-# 	show = diff-highlight | less
-# [interactive]
-# 	diffFilter = diff-highlight
-[diff]
-	compactionHeuristic = true
-[color "diff"]
-	meta = normal 238
-	frag = normal 235 dim
-	context = normal normal dim
-	old = magenta
-	new = cyan
-	commit = normal 026
-	whitespace = normal 240
+[pager]
+	log = diff-highlight | less
+	diff = diff-highlight | less
+	show = diff-highlight | less
+[interactive]
+	diffFilter = diff-highlight
+
 [ghq]
 	root = ~/git
 	root = ~/go/src
-[url "git@github.com:"]
-	pushinsteadof = https://github.com/
