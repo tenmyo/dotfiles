@@ -1,0 +1,25 @@
+#!/usr/bin/perl
+
+for ($fgbg = 38; $fgbg <= 48; $fgbg +=10) {
+  print "system:\n";
+  for ($rgb = 0; $rgb < 16; $rgb++) {
+    print "\x1b[${fgbg};5;${rgb}m ";
+    printf "%03d", $rgb;
+    if (($rgb % 8) == 7) { print "\x1b[0m\n"; }
+  }
+  print "\x1b[0m\n";
+  print "gray:\n";
+  for ($rgb = 232; $rgb < 256; $rgb++) {
+    print "\x1b[${fgbg};5;${rgb}m ";
+    printf "%03d", $rgb;
+  }
+  print "\x1b[0m\n";
+  print "rgb:\n";
+  for ($rgb = 16; $rgb < 232; $rgb++) {
+    if ((($rgb-16) % 6) == 0) { print " "; }
+    print "\x1b[${fgbg};5;${rgb}m";
+    printf "%03d", $rgb;
+    if ((($rgb-16) % 36) == 35) { print "\x1b[0m\n"; }
+  }
+  print "\x1b[0m\n\n";
+}
