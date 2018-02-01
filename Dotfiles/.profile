@@ -13,6 +13,8 @@ export EDITOR=vim
 # http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables
 export PAGER=less
 export LESS='--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS'
+type src-hilite-lesspipe.sh >/dev/null 2>&1         &&
+  export LESSOPEN='| src-hilite-lesspipe.sh "%s"'
 # export LESS_TERMCAP_DEBUG=1
 export LESS_TERMCAP_mb=$(tput rev)                  # start blink
 export LESS_TERMCAP_md=$(tput bold; tput setaf 4)   # start bold(blue)
@@ -51,4 +53,6 @@ export PATH="$GOBIN:$PATH"
 type ccache >/dev/null 2>&1             &&
   export USE_CCACHE=1                   &&
   export CCACHE_DIR="$HOME/.cache/ccache"
+
+:
 

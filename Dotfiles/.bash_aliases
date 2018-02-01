@@ -13,15 +13,19 @@ alias grep='grep --color'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias ls='ls --color=auto'
+alias grep='grep --line-number'
 
+# cd
 alias ..='cd ..'
 alias ...='cd ../..'
 alias -- -='cd -'
 
+# ls
 alias l='ls -F'
 alias la='ls -A'
 alias ll='ls -A -l --time-style="+%F %T"'
 
+# shell
 alias whence='type -a'
 alias relogin='exec $SHELL -l'
 alias re=relogin
@@ -41,6 +45,7 @@ alias vg='vagrant global-status'
 alias vt='vagrant teraterm'
 alias vsc='vagrant ssh -c "screen -xRR"'
 
+# 
 alias down='curl -LO'
 alias plist='pacman -Ss'
 alias pinst='pacman -S'
@@ -54,3 +59,6 @@ alias gdc='git diff --cached'
 alias sts='git status --short --branch'
 alias gt='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
 alias glogps='git log -p --stat'
+
+alias le=less
+
