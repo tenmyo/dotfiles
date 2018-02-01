@@ -24,5 +24,23 @@
         "--follow-imports=silent",
         "--strict",
         "--strict-optional"
-    ]
+    ],
+    "[cmake]": {
+        "editor.tabSize": 2
+    },
+    "cmake-tools-helper.cmake_download_path": "/home/tenmyo/.vscode/extensions/maddouri.cmake-tools-helper-0.1.1/cmake_download",
+    "cmake.cmakePath": "/home/tenmyo/.vscode/extensions/maddouri.cmake-tools-helper-0.1.1/cmake_download/cmake-3.8.2-Linux-x86_64/bin/cmake",
+    "cmake.useCMakeServer": true,
+    "workbench.iconTheme": "vscode-icons",
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressUpdateNotice": false,
+        "suppressWelcomeNotice": true
+    }
 }
