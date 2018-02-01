@@ -16,6 +16,10 @@ if has('smartindent')
 endif
 set smarttab
 
+if exists('+autochdir')
+  set autochdir
+endif
+
 " cursors
 set cursorcolumn
 highlight CursorColumn ctermbg=DarkGray guibg=Gray20
