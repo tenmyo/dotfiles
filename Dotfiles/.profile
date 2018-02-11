@@ -29,6 +29,7 @@ export LESS_TERMCAP_ue=$(tput rmul; tput sgr0)      # stop underline
 # export LESS_TERMCAP_ZV=$(tput rsubm)
 # export LESS_TERMCAP_ZO=$(tput ssupm)
 # export LESS_TERMCAP_ZW=$(tput rsupm)
+export COLORFGBG="15;0"
 
 # ~/.local
 [ -d "$HOME/.local" ] &&

@@ -58,3 +58,11 @@
 	root = ~/go/src
 [ghq "https://svn.code.sf.net/"]
 	vcs=svn
+# tig
+[tig]
+	main-view = id date author commit-title:graph=yes,refs=yes
+[tig "color"]
+	# fg bg [attr]
+	diff-header = default magenta
+	diff-chunk = black white
+
