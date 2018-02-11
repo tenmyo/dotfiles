@@ -52,6 +52,9 @@
 [interactive]
 	diffFilter = diff-highlight
 
+# ghq
 [ghq]
 	root = ~/git
 	root = ~/go/src
+[ghq "https://svn.code.sf.net/"]
+	vcs=svn
