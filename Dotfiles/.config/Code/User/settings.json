@@ -42,5 +42,13 @@
         "suppressResultsExplorerNotice": false,
         "suppressUpdateNotice": false,
         "suppressWelcomeNotice": true
-    }
+    },
+    "TodoParser": {
+        //"exclude": ["cpp", "c"],
+        //"include": ["h","c","cpp","txt"],
+        "folderExclude": ["node_modules", ".vscode"],
+        //"only": ["sub-folder/sub-sub-folder"],
+        "showInProblems": true,
+        //"markers": ["TODO:","NOTE:", "REMINDER:", ["FIXME", "Warning"]],
+    },
 }
