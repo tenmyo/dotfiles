@@ -19,7 +19,8 @@ function g {
   [[ -n "$dir" ]] && cd "$dir"
 }
 function gh {
-  local dir="$(ghq list | peco | cut -d / -f 2,3)"
+  #local dir="$(ghq list | peco | cut -d / -f 2,3)"
+  local dir="$(ghq list | peco)"
   [[ -n "$dir" ]] && cd "$(ghq list --exact --full-path $dir)"
 }
 function peco-select-history() {
