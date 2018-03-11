@@ -2,9 +2,8 @@
 
 echo '~/'
 for f in $(dirname $(realpath $0))/Dotfiles/.??* ; do
-  [ -n "${MSYS}" ] && [ $(basename $f) = .gitconfig ] && continue
   [ -f "$f" ] || continue
-  ln -sf $f ~/$(basename $f)
+  ln -sfT $f ~/$(basename $f)
   echo "  $(basename $f)"
 done
 
@@ -17,7 +16,7 @@ done
 
 echo '~/.local/bin'
 for f in $(dirname $(realpath $0))/bin/* ; do
-  ln -sf $f ~/.local/bin/$(basename $f)
+  ln -sfT $f ~/.local/bin/$(basename $f)
   echo "  $(basename $f)"
 done
 
