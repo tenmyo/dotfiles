@@ -6,7 +6,8 @@ echo .profile
 # (however, bash uses ~/.bashrc instead $ENV)
 export ENV=$HOME/.shrc
 
-export EDITOR=vim
+type -P vim >/dev/null 2>&1 &&
+  export EDITOR=vim
 
 # less
 # http://linux.101hacks.com/ps1-examples/prompt-color-using-tput/
@@ -51,7 +52,7 @@ export GOBIN="$GOPATH/bin"
 export PATH="$GOBIN:$PATH"
 
 # ccache
-type ccache >/dev/null 2>&1             &&
+type -P ccache >/dev/null 2>&1          &&
   export USE_CCACHE=1                   &&
   export CCACHE_DIR="$HOME/.cache/ccache"
 

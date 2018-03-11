@@ -31,9 +31,11 @@ alias re=relogin
 alias reload='exec $SHELL'
 
 # use vim
-alias vi='vim'
-alias view='vim -R'
-alias nvim='vim -N -u NONE -i NONE'
+if type -P vim > /dev/null 2>&1; then
+  alias vi='vim'
+  alias view='vim -R'
+  alias nvim='vim -N -u NONE -i NONE'
+fi
 
 # Vagrant
 alias vu='vagrant up'
@@ -60,4 +62,6 @@ alias gt='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yell
 alias glogps='git log -p --stat'
 
 alias le=less
+
+# vi: et sw=2 sts=2
 

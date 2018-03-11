@@ -152,7 +152,8 @@ fi
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 
 if [[ -z "${TMUX}" ]]; then
-  tmux
+  type -P tmux >/dev/null 2>&1 &&
+    tmux
 fi
 
 
@@ -160,6 +161,6 @@ fi
 # Bind
 # ===============================
 bind -x '"\C-r": peco-select-history'
-bind -x '"\ep": peco-buffer'
+bind -x '"\ep" : peco-buffer'
 # vi: et sw=2 sts=2
 
