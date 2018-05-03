@@ -160,7 +160,9 @@ fi
 # ===============================
 # Bind
 # ===============================
-bind -x '"\C-r": peco-select-history'
-bind -x '"\ep" : peco-buffer'
+if type -P peco >/dev/null ; then
+  bind -x '"\C-r": peco-select-history'
+  bind -x '"\ep" : peco-buffer'
+fi
 # vi: et sw=2 sts=2
 
