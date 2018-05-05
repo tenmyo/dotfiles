@@ -5,6 +5,6 @@ set -eu
 cat ~/.ssh/id_ed25519.pub
 read -p upload to github
 
-dotfiles=~/src/github.com/tenmyo/dotfiles
+dotfiles=~/git/github.com/tenmyo/dotfiles
 [ -e "${dotfiles}" ] || git clone git@github.com:tenmyo/dotfiles.git "${dotfiles}"
 
