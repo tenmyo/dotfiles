@@ -13,5 +13,35 @@ echo .shrc
 # If you want to force overwrite, use >| instead >$
 set -o noclobber
 
+# ===============================$
+# Environment
+# ===============================$
+export EDITOR=vi
+type -P vim >/dev/null 2>&1 &&
+  export EDITOR=vim
+
+# less
+# http://linux.101hacks.com/ps1-examples/prompt-color-using-tput/
+# http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables
+export PAGER=less
+export LESS='--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS'
+type src-hilite-lesspipe.sh >/dev/null 2>&1         &&
+  export LESSOPEN='| src-hilite-lesspipe.sh "%s"'
+# export LESS_TERMCAP_DEBUG=1
+export LESS_TERMCAP_mb=$(tput rev)                  # start blink
+export LESS_TERMCAP_md=$(tput bold; tput setaf 4)   # start bold(blue)
+export LESS_TERMCAP_me=$(tput sgr0)                 # turn off bold, blink, underline
+export LESS_TERMCAP_so=$(tput smso; tput setaf 3)   # start standout(yellow)
+export LESS_TERMCAP_se=$(tput sgr0)                 # stop standout
+export LESS_TERMCAP_us=$(tput smul; tput setaf 2)   # start underline(green)
+export LESS_TERMCAP_ue=$(tput rmul; tput sgr0)      # stop underline
+# export LESS_TERMCAP_mr=$(tput rev)
+# export LESS_TERMCAP_mh=$(tput dim)
+# export LESS_TERMCAP_ZN=$(tput ssubm)
+# export LESS_TERMCAP_ZV=$(tput rsubm)
+# export LESS_TERMCAP_ZO=$(tput ssupm)
+# export LESS_TERMCAP_ZW=$(tput rsupm)
+export COLORFGBG="15;0"
+
 # vi: et sw=2 sts=2 syntax=sh
 

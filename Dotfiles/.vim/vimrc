@@ -20,6 +20,11 @@ if exists('+autochdir')
   set autochdir
 endif
 
+if has('windows')
+  set splitbelow
+  set splitright
+endif
+
 " cursors
 set cursorcolumn
 highlight CursorColumn ctermbg=DarkGray guibg=Gray20
