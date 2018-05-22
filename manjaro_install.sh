@@ -6,10 +6,10 @@ sudo pacman-mirrors -c Japan
 sudo pacman -Syu
 sudo pacman -S --needed yay
 
-yay -S --needed --noconfirm base-devel ccache cmake extra/go
+yay -S --needed --noconfirm base-devel ccache cmake extra/go ninja
 yay -S --needed --noconfirm git tmux vim vimpager curl bash-completion
 yay -S --needed --noconfirm fcitx-mozc fcitx-configtool fcitx-gtk3 fcitx-qt5
-yay -S --needed --noconfirm tree lsof jq
+yay -S --needed --noconfirm tree lsof jq the_platinum_searcher-bin
 yay -S --needed --noconfirm xorg-xwininfo compton meld xsel
 
 yay -S --needed --noconfirm aur/ttf-myricam aur/visual-studio-code-bin
