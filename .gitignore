@@ -2,4 +2,5 @@
 /Dotfiles/.vim/swap
 /config/Code/*
 !/config/Code/User
+/config/Code/User/workspaceStorage/
 
