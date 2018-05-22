@@ -105,6 +105,8 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 nnoremap <silent><ESC><ESC> :nohlsearch<CR><ESC>
 set pastetoggle=<F9>
 nnoremap <silent><F9> :set paste!<CR>:set paste?<CR>
+" very magic
+nnoremap / /\v
 
 " http://inari.hatenablog.com/entry/2014/05/05/231307
 """"""""""""""""""""""""""""""

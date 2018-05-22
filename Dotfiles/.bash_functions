@@ -46,5 +46,5 @@ function ptvim() {
   fi
 }
 
-# vi: et sw=2 sts=2
+# vi: et sw=2 sts=2 syntax=sh
 
