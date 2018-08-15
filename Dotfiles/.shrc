@@ -43,5 +43,7 @@ export LESS_TERMCAP_ue=$(tput rmul; tput sgr0)      # stop underline
 # export LESS_TERMCAP_ZW=$(tput rsupm)
 export COLORFGBG="15;0"
 
+export PYTHONWARNINGS=default
+
 # vi: et sw=2 sts=2 syntax=sh
 
