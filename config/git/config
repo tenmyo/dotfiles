@@ -6,6 +6,20 @@
 
 # Alias
 [alias]
+	al = config --get-regexp '^alias.'
+	co = checkout
+	rmc = rm --cached
+	nevermind = !git reset --hard HEAD && git clean -d -f
+# diff
+	d = diff
+	dh = diff HEAD
+	dhh = diff HEAD^
+	dc = diff --cached
+# status
+	s = status --short --branch
+# log
+	l = log -p --stat
+	lt = log --graph --all --format='%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s'
 
 # General
 [color]
