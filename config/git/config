@@ -68,8 +68,8 @@
 
 # ghq
 [ghq]
-	root = ~/git
-	root = ~/go/src
+	root = /data/git
+	root = /data/go/src
 [ghq "https://svn.code.sf.net/"]
 	vcs=svn
 # tig
