@@ -1,6 +1,6 @@
 ```
-sh -c "$(curl -fLsS https://raw.githubusercontent.com/tenmyo/dotfiles/master/setup_git.sh)"
-cd /data/git/github.com/tenmyo/dotfiles/
+sh -c "$(curl -fLsS https://raw.githubusercontent.com/${USER}/dotfiles/master/setup_git.sh)"
+cd /data/git/github.com/${USER}/dotfiles/
 ./manjaro_install.sh
 ./deproy.sh
 ```
