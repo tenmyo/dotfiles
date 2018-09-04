@@ -2,11 +2,13 @@
 set -eu
 . Dotfiles/.profile
 
-sudo pacman-mirrors -c Japan
-sudo pacman -Syu
-sudo pacman -S --needed yay
+LANGUAGE=en /usr/bin/xdg-user-dirs-update --force
 
-yay -S --needed --noconfirm base-devel ccache cmake extra/go ninja
+sudo pacman-mirrors -c Japan
+sudo pacman -Syu --noconfirm
+sudo pacman -S --needed --noconfirm yay
+
+yay -S --needed --noconfirm base-devel ccache cmake go ninja
 yay -S --needed --noconfirm git tmux vim vimpager curl bash-completion
 yay -S --needed --noconfirm fcitx-mozc fcitx-configtool fcitx-gtk3 fcitx-qt5
 yay -S --needed --noconfirm tree lsof jq the_platinum_searcher-bin

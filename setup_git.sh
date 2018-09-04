@@ -1,10 +1,12 @@
 #!/bin/sh
 set -eu
 
-[ -f ~/.ssh/id_ed25519.pub ] || ssh-keygen -t ed25519 -C "tenmyo@gmail.com"
+[ -f ~/.ssh/id_ed25519.pub ] || ssh-keygen -t ed25519 -C "tenmyo"
 cat ~/.ssh/id_ed25519.pub
-read -p upload to github
+read -p "please upload to github https://github.com/settings/keys"
 
-dotfiles=~/git/github.com/tenmyo/dotfiles
-[ -e "${dotfiles}" ] || git clone git@github.com:tenmyo/dotfiles.git "${dotfiles}"
+dotfiles=/data/git/github.com/tenmyo/dotfiles
+read -p "git clone to [${dotfiles}]: " dotdir
+dotdir=${dotdir:=${dotfiles}}
+[ -e "${dotdir}" ] || git clone git@github.com:tenmyo/dotfiles.git "${dotdir}"
 
